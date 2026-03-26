@@ -26,7 +26,7 @@ func TestAll(t *testing.T) {
 			wantBody:   "Booking dates are valid!",
 		},
 		{
-			name:       "valid date",
+			name:       "invalid date",
 			path:		"/bookable?check_in=2118-04-17&check_out=2118-04-16",
 			wantStatus: http.StatusBadRequest,
 			wantBody:   "Error",
