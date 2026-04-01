@@ -1,13 +1,13 @@
 package main
 
 import (
-	"testing"
-	"net/http"
-	"net/url"
-	"net/http/httptest"
-	"strings"
 	"bytes"
 	"mime/multipart"
+	"net/http"
+	"net/http/httptest"
+	"net/url"
+	"strings"
+	"testing"
 
 	"github.com/gin-gonic/gin"
 	"github.com/stretchr/testify/assert"
@@ -61,7 +61,7 @@ func TestMultipartForm(t *testing.T) {
 
 	writer.Close()
 
-		w := httptest.NewRecorder()
+	w := httptest.NewRecorder()
 	req, _ := http.NewRequest(http.MethodPost, PATH, &body)
 	req.Header.Set(CONTENT_TYPE, writer.FormDataContentType())
 	router.ServeHTTP(w, req)
